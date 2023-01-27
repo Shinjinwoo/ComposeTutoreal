@@ -36,17 +36,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         setContent {
             ComposeTutorial2Theme() {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                    Logger.e("가나다라마바사")
-                }
+                    MyApp(modifier = Modifier.fillMaxSize())
             }
         }
     }
@@ -54,13 +47,30 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Surface(color = MaterialTheme.colorScheme.primary) {
+    Surface(
+        color = MaterialTheme.colorScheme.primary
+    ) {
         /*
         Surface 및 Text와 같은 대부분의 Compose UI 요소는 modifier(수정자) 매개변수를 선택적으로 허용한다.
         수정자는 상위 요소 레이아웃 내에서 UI 요소가 배치되고 표시되고 동작하는 방식을 UI 요소에 알려준다.
         */
-
         Text(text = "Hello $name!", modifier = Modifier.padding(24.dp))
+    }
+}
+
+@Composable
+private fun MyApp(modifier: Modifier = Modifier) {
+    /*
+    컴포서블 재사용 이유 : UI에 추가하는 구성요소가 많을수록 생성되는 중첩 레벨이 더 많아지기 때문. 너무나 자명한 사실.
+
+    함수 내에서 호출하는 첫 번째 컴포저블로 이 수정자를 전달한다.
+    이렇게 하면 호출 사이트가 구성 가능한 함수 외부에서 레이아웃 안내와 동작을 조정할 수 있다.
+     */
+    Surface(
+        modifier = modifier,
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Greeting("Android")
     }
 }
 
@@ -68,7 +78,7 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ComposeTutorial2Theme {
-        Greeting("Android")
+        MyApp()
     }
 }
 
