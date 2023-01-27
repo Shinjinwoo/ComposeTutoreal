@@ -1,35 +1,27 @@
 package com.example.composetutoreal2
 
-import android.content.res.Configuration
+
 import android.os.Bundle
-import android.widget.Toast
+
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.animateContentSize
 
-import androidx.compose.ui.res.painterResource
+
+
 import androidx.compose.ui.tooling.preview.Preview
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+
 import com.example.composetutoreal2.ui.theme.ComposeTutorial2Theme
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.FormatStrategy
+
 import com.orhanobut.logger.Logger
-import com.orhanobut.logger.PrettyFormatStrategy
+
 
 
 class MainActivity : ComponentActivity() {
@@ -62,7 +54,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Surface(color = MaterialTheme.colorScheme.primary) {
+        /*
+        Surface 및 Text와 같은 대부분의 Compose UI 요소는 modifier(수정자) 매개변수를 선택적으로 허용한다.
+        수정자는 상위 요소 레이아웃 내에서 UI 요소가 배치되고 표시되고 동작하는 방식을 UI 요소에 알려준다.
+        */
+
+        Text(text = "Hello $name!", modifier = Modifier.padding(24.dp))
+    }
 }
 
 @Preview(showBackground = true)
@@ -75,12 +74,12 @@ fun DefaultPreview() {
 
 
 
-@Preview
-@Composable
-fun PreviewConversation() {
-    ComposeTutorial2Theme {
-        Conversation(SampleData.conversationSample)
-    }
-}
+//@Preview
+//@Composable
+//fun PreviewConversation() {
+//    ComposeTutorial2Theme {
+//        Conversation(SampleData.conversationSample)
+//    }
+//}
 
 

@@ -7,9 +7,15 @@ import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 
 class MyApplication : Application() {
-
     override fun onCreate() {
+        initLoggerPlugin()
 
+        super.onCreate()
+    }
+
+
+
+    private fun initLoggerPlugin() {
         val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
             .showThreadInfo(false) // (Optional) Whether to show thread info or not. Default true
             .methodCount(2)        // (Optional) How many method line to show. Default 2
@@ -18,9 +24,5 @@ class MyApplication : Application() {
             .build()
 
         Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
-
-
-
-        super.onCreate()
     }
 }
