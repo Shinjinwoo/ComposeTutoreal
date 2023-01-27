@@ -26,9 +26,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.composetutoreal2.ui.theme.ComposeTutorial2Theme
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.FormatStrategy
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.PrettyFormatStrategy
 
 
 class MainActivity : ComponentActivity() {
+
+
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -36,6 +43,8 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContent {
             ComposeTutorial2Theme() {
                 // A surface container using the 'background' color from the theme
@@ -44,6 +53,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android")
+                    Logger.e("가나다라마바사")
                 }
             }
         }
