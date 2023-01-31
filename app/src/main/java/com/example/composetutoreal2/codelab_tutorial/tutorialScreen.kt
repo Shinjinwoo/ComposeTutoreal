@@ -1,4 +1,4 @@
-package com.example.composetutoreal2
+package com.example.composetutoreal2.codelab_tutorial
 
 import android.widget.Toast
 import androidx.compose.animation.animateColorAsState
@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.composetutoreal2.R
 
 class tutorialScreen {
 

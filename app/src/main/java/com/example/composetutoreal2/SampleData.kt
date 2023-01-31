@@ -1,5 +1,7 @@
 package com.example.composetutoreal2
 
+import com.example.composetutoreal2.codelab_tutorial.Message
+
 object SampleData {
     // Sample conversation data
     val conversationSample = listOf(

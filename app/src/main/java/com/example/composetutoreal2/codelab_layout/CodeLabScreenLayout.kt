@@ -1,4 +1,6 @@
-package com.example.composetutoreal2
+@file:OptIn(ExperimentalMaterial3Api::class)
+
+package com.example.composetutoreal2.codelab_layout
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -26,10 +28,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.composetutoreal2.R
 import com.example.composetutoreal2.ui.theme.ComposeTutorial2Theme
 
-class CodeLabScreenLayout {
-}
+
 
 @ExperimentalMaterial3Api
 @Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)

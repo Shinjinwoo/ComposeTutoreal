@@ -1,4 +1,4 @@
-package com.example.composetutoreal2
+package com.example.composetutoreal2.codelab_basic
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState

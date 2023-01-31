@@ -2,7 +2,6 @@
 
 package com.example.composetutoreal2
 
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,12 +11,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.composetutoreal2.codelab_layout.FavoriteCollectionsGrid
+import com.example.composetutoreal2.codelab_layout.HomeScreen
+import com.example.composetutoreal2.codelab_layout.SootheBottomNavigation
 import com.example.composetutoreal2.ui.theme.ComposeTutorial2Theme
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 
 @Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
 @Composable
